@@ -22,13 +22,13 @@ app.post("/salvar", (req, res) => {
     let nome = req.body.nome;
     let idade = req.body.idade;
 
-    let sql = "INSERT INTO alunos (nome, idade) VALUES (?, ?)"
-
-    conexao.query(sql, [nome, idade], (erro resultado) => {
-        if(erro) {
-            console.log(erro);
-        } else{
+    
+})
+conexao.query(sql, [nome,idade], (erro,resultado) =>{
+    if (erro) {
+        console.log(erro)
+        } else {
             res.send("Aluno salvo com sucesso")
         }
-    });
-})
+    }
+);
